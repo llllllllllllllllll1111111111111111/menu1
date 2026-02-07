@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Рандомная страница</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        p {
+            line-height: 1.6;
+            color: #666;
+        }
+        .random-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .random-list li {
+            background-color: #e0f7fa;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        a {
+            color: #2196F3;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Добро пожаловать на рандомную страницу!</h1>
+        <p>Это пример HTML-документа, который вы можете загрузить на GitHub и поделиться ссылкой. Здесь есть текст, список и ссылки — всё для теста!</p>
+
+        <ul class="random-list">
+            <li>Элемент списка №1 — просто текст для заполнения.</li>
+            <li>Элемент списка №2 — ещё немного рандомного контента.</li>
+            <li>Элемент списка №3 — попробуйте изменить этот текст!</li>
+            <li>Элемент списка №4 — добавьте свои идеи сюда.</li>
+        </ul>
+
+        <p>Вот несколько ссылок для примера:</p>
+        <ul>
+            <li><a href="https://www.github.com" target="_blank">Перейти на GitHub</a></li>
+            <li><a href="https://www.example.com" target="_blank">Пример ссылки</a></li>
+        </ul>
+
+        <p>Дата генерации: <span id="date"></span></p>
+
+        <script>
+            document.getElementById('date').textContent = new Date().toLocaleDateString();
+        </script>
+    </div>
+</body>
+</html>
