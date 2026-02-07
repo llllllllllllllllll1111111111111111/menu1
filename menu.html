@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Меню ресторана</title>
+    <style>
+        /* Базовое скрытие меню */
+        .menu-content {
+            display: none;
+        }
+        .menu-content.active {
+            display: block;
+        }
+
+        /* Ваши стили (сокращены для наглядности) */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333; line-height: 1.6; padding: 20px;
+        }
+        .container {
+            max-width: 1000px; margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 16px; overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        header {
+            text-align: center; padding: 30px 20px;
+            background: linear-gradient(to right, #8e2de2, #4a00e0);
+            color: white;
+        }
+        h1 {
+            font-size: 2.5rem; margin-bottom: 10px; letter-spacing: 1px;
+        }
+        .menu-tabs {
+            display: flex; justify-content: center; gap: 10px;
+            padding: 15px 20px; background-color: #f0f0f0;
+            border-bottom: 1px solid #ddd;
+        }
+        .tab {
+            padding: 12px 25px; border-radius: 8px; font-weight: 600;
+            cursor: pointer; transition: all 0.3s ease;
+            background-color: #fff; border: 2px solid transparent;
+        }
+        .tab.active {
+            background-color: #8e2de2; color: white; border-color: #8e2de2;
+        }
+        .tab:hover {
+            transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .section-title {
+            color: #8e2de2; font-size: 1.8rem; margin: 25px 0 20px 0;
+            padding-left: 5px; border-left: 5px solid #8e2de2; font-weight: 600;
+        }
+        .dish {
+            display: flex; align-items: flex-start; gap: 30px;
+            padding: 25px 0; border-bottom: 1px solid #eee;
+        }
+        .dish-image {
+            flex-shrink: 0; width: 220px; height: 220px;
+            border-radius: 16px; overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+        .dish-image img {
+            width: 100%; height: 100%; object-fit: cover;
+        }
+        .dish-content h2 {
+            color: #2c3e50; font-size: 1.5rem; margin-bottom: 12px;
+            font-weight: 700;
+        }
+        .ingredients {
+            color: #666; font-style: italic; font-size: 1rem;
+            margin-bottom: 16px; line-height: 1.5;
+        }
+        .price {
+            font-weight: bold; color: #e74c3c; font-size: 1.3rem;
+            margin-top: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Историческое меню</h1>
+            <p>Традиционная Орловская кухня</p>
+        </header>
+
+        <!-- Табы для переключения -->
+        <div class="menu-tabs">
+            <div class="tab active" onclick="switchMenu('menu1')">Меню 1</div>
+            <div class="tab" onclick="switchMenu('menu2')">Меню 2</div>
+        </div>
+
+        <!-- Меню 1 -->
+        <div id="menu1" class="menu-content active">
+            <h2 class="section-title">Основные блюда</h2>
+            <div class="dish">
+                <div class="dish-image">
+                    <img src="images/test5.png" alt="Чай с мятой">
+                </div>
+                <div class="dish-content">
+                    <h2>Чай с мятой</h2>
+                    <p class="ingredients">Чёрный чай, свежая мята, сахар (по желанию), вода.</p>
+                    <p class="price">60 ₽</p>
+                </div>
+            </div>
+        <div class="dish">
+                <div class="dish-image">
+                    <img src="images/test6.png"" alt="Пирожки с капустой">
+                </div>
+                <div class="dish-content">
+                    <h2>Пирожки с капустой </h2>
+                    <p class="ingredients">Дрожжевое тесто, капуста белокочанная, лук, морковь, растительное масло, соль, перец.</p>
+                     <p class="price">120 ₽</p>
+                 </div>
+                     </div>
+                   <div class="dish">
+                <div class="dish-image">
+                    <img src="images/test8.png"" alt="Салат капустный традиционный">
+                </div>
+                <div class="dish-content">
+                    <h2>Салат капустный традиционный</h2>
+                    <p class="ingredients">Белокочанная капуста,сахар,уксус,растительное масло,соль,перец.
+                     <p class="price">150 ₽</p>
+        </div>
+      </div>
+             <div class="dish">
+                <div class="dish-image">
+                    <img src="images/test7.png"" alt="Перловка с курицей">
+                </div>
+                <div class="dish-content">
+                    <h2>Перловка с курицей</h2>
+                    <p class="ingredients">Перловая крупа, куриное филе, лук, морковь, растительное масло, соль, перец, лавровый лист.
+                     <p class="price">400 ₽</p>
+        </div>
+      </div>
+
+            <!-- Другие блюда Меню 1 -->
+        </div>
+
+        <!-- Меню 2 -->
+        <div id="menu2" class="menu-content">
+            <h2 class="section-title">Основные блюда</h2>
+            <div class="dish">
+                <div class="dish-image">
+                    <img src="images/kompot.jpg" alt="Компот из крыжовника">
+                </div>
+                <div class="dish-content">
+                    <h2>Компот из крыжовника</h2>
+                    <p class="ingredients">Свежий крыжовник, родниковая вода, натуральный сахар.</p>
+                    <p class="price">150 ₽</p>
+                </div>
+            </div>
+             <div class="dish">
+                <div class="dish-image">
+                    <img src="images/test1.png"" alt="Пряник">
+                </div>
+                <div class="dish-content">
+                    <h2>Пряник</h2>
+                    <p class="ingredients">Мука высшего сорта, мёд натуральный, сахар.
+                     <p class="price">90 ₽</p>
+                 </div>
+            </div>
+            <div class="dish">
+                <div class="dish-image">
+                    <img src="images/test2.png"" alt="Котлеты по-лутовиновски">
+                </div>
+                <div class="dish-content">
+                    <h2>Котлеты по-лутовиновски</h2>
+                    <p class="ingredients">Фарш (говядина + свинина), лук, чеснок, яйцо, панировочные сухари, соль, перец, сливочное масло.
+                     <p class="price">300 ₽</p>
+                 </div>
+            </div>
+        <div class="dish">
+                <div class="dish-image">
+                    <img src="images/test3.png"" alt="Картошка по-деревенски с розмарином">
+                </div>
+                <div class="dish-content">
+                    <h2>Картошка по-деревенски с розмарином</h2>
+                    <p class="ingredients">Картофель, растительное масло, соль, чёрный перец, сушёный чеснок, розмарин, паприка.
+                     <p class="price">200 ₽</p>
+                 </div>
+             </div>
+         <div class="dish">
+                <div class="dish-image">
+                    <img src="images/test4.png"" alt="Салат «Орловский» с курицей и горошком">
+                </div>
+                <div class="dish-content">
+                    <h2>Салат «Орловский» с курицей и горошком</h2>
+                    <p class="ingredients">Огурцы, помидоры, редис, адыгейский сыр, оливковое масло, соль, перец.
+                     <p class="price">280 ₽</p>
+                 </div>
+                   </div>
+
+            <!-- Другие блюда Меню 2 -->
+        </div>
+    </div>
+
+    <!-- JavaScript в конце страницы -->
+    <script>
+        function switchMenu(menuId) {
+            // 1. Снимаем класс 'active' со всех меню
+            document.getElementById('menu1').classList.remove('active');
+            document.getElementById('menu2').classList.remove('active');
+
+            // 2. Добавляем класс 'active' к выбранному меню
+            document.getElementById(menuId).classList.add('active');
+
+            // 3. Обновляем стили табов
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tab => {
+                if (tab.getAttribute('onclick').includes(menuId)) {
+                    tab.classList.add('active');
+                } else {
+                    tab.classList.remove('active');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
